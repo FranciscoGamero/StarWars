@@ -1,3 +1,6 @@
+.fondo{
+    background-color: rgba(0, 0, 0, 0.616);
+}
 .modal-content {
     background-color: #4CAF50; /* Fondo verde */
     color: white; /* Texto en blanco */
