@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    getPokemonListV2();
+    getPersonajeListV2();
 
     function capitalize(text) {
         const primeraLetra = text.charAt(0);
@@ -7,30 +7,30 @@ $(document).ready(function () {
         return primeraLetra.toUpperCase() + resto.toLowerCase();
       }
 
-    function getPokemonListV2() {
-    $('#listaPokemon');
+    function getPersonajeListV2() {
+    $('#listaPersonaje');
         $.ajax({
-            url: "https://pokeapi.co/api/v2/pokemon",
+            url: "https://swapi.dev/api/people",
             method: "GET",
-        }).done(function (resp) {            
-            var listadoPokemon = resp.results;
-            listadoPokemon.forEach(function (pokemon) {
-                var pokemonId = pokemon.url.split("/")[6];
+        }).done(function (respuesta) {            
+            var listadoPersonajes = respuesta.results;
+            listadoPersonajes.forEach(function (personaje) {
+                var personajeId = personaje.url.split("/")[5];
                 var template = `
-                    <div class="card m-2 planta text-light" style="width: 18rem;" id="${pokemonId}">
-                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png" class="card-img-top" alt="..."></img>
+                    <div class="card m-2 fondo text-light" style="width: 18rem;" id="${personajeId}">
                         <div class="card-body">
-                            <button type="button" class="btn-ver-pokemon btn btn-danger text-warning" data-id="${pokemonId}" data-bs-toggle="modal" data-bs-target="#pokemonModal${pokemonId}">
-                                Ver Pokemon
+                            <button type="button" class="btn-ver-personaje btn btn-dark text-warning" data-id="${personajeId}" data-bs-toggle="modal" data-bs-target="#personajeModal${personajeId}">
+                                Ver Personaje
                             </button>
-                            <h3 class="mt-4">${pokemon.name.toUpperCase()}</h3>
-                            <h4>#${pokemonId}</h4>
+                            <h3 class="mt-4">${capitalize(personaje.name)}</h3>
+                            <h4>#${personajeId}</h4>
                         </div>
                     </div>`;
-                $('#listaPokemon').append(template);
+                $('#listaPersonaje').append(template);
             });
         });
     }
+    /*
     $(document).on('click', '.btn-ver-pokemon', function () {
       var pokemonId = $(this).data('id');
       $.ajax({
@@ -69,4 +69,5 @@ $(document).ready(function () {
           }
         })
   });
+  */
 });
