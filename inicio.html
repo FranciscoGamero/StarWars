@@ -23,17 +23,11 @@
   <body>
     <nav class="navbar navbar-expand-lg fondo">
         <div class="container-fluid">
-          <img  src="../StarWars/img/StarWars_Logo.png" alt="logoPokedex" width="15%">
+          <img  src="./img/StarWars_Logo.png" alt="logoPokedex" width="15%">
           <div class="w-75" id="navbarSupportedContent">
             <ul class="navbar-nav h1">
               <li class="nav-item mx-auto">
                 <a class="nav-link active text-warning " aria-current="page" href="#">PERSONAJES</a>
-              </li>
-              <li class="nav-item mx-auto">
-                <a class="nav-link text-light" href="#">ITEM</a>
-              </li>
-              <li class="nav-item mx-auto">
-                <a class="nav-link text-light" href="#">MOVIMIENTOS</a>
               </li>
             </ul>
           </div>
@@ -58,34 +52,7 @@
                         </ul>
                       </div>
                     </li>
-                    <li class="nav-item mx-auto">
-                      <div class="dropdown">
-                        <button type="button" class="btn btn-dark fondo dropdown-toggle text-light" data-bs-toggle="dropdown">
-                          Tipo
-                        </button>
-                        <ul class="dropdown-menu w-auto">
-                          <ul class="row list-unstyled">
-                            <li class="col-5"><a class="dropdown-item" href="#">Planta</a></li>
-                            <li class="col-7"><a class="dropdown-item" href="#">Hielo</a></li>
-                            <li class="col-5"><a class="dropdown-item" href="#">Acero</a></li>
-                            <li class="col-7"><a class="dropdown-item" href="#">Lucha</a></li>
-                            <li class="col-5"><a class="dropdown-item" href="#">Agua</a></li>
-                            <li class="col-7"><a class="dropdown-item" href="#">Normal</a></li>
-                            <li class="col-5"><a class="dropdown-item" href="#">Bicho</a></li>
-                            <li class="col-7"><a class="dropdown-item" href="#">Psíquico</a></li>
-                            <li class="col-5"><a class="dropdown-item" href="#">Dragón</a></li>
-                            <li class="col-7"><a class="dropdown-item" href="#">Roca</a></li>
-                            <li class="col-5"><a class="dropdown-item" href="#">Eléctrico</a></li>
-                            <li class="col-7"><a class="dropdown-item" href="#">Siniestro</a></li>
-                            <li class="col-5"><a class="dropdown-item" href="#">Fantasma</a></li>
-                            <li class="col-7"><a class="dropdown-item" href="#">Tierra</a></li>
-                            <li class="col-5"><a class="dropdown-item" href="#">Fuego</a></li>
-                            <li class="col-7"><a class="dropdown-item" href="#">Veneno</a></li>
-                            <li class="col-5"><a class="dropdown-item" href="#">Hada</a></li>
-                            <li class="col-7"><a class="dropdown-item" href="#">Volador</a></li>
-                        </ul>
-                      </div>
-                    </li>
+                 
                 </ul>
             </div>
         </div>
@@ -95,79 +62,45 @@
             <div class="row" id="listaPersonaje"></div>
         </div>
     </main>
-    
 
-    
-
-      
-       
-      
-
-      
-        
-      
-     
-    <div class="modal fade" id="pokemonModal" tabindex="-1" aria-labelledby="pokemonModalLabel" aria-hidden="true">
+    <div class="modal fade" id="personajeModal" tabindex="-1" aria-labelledby="personajeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg bg-body-tertiary">
-            <div class="modal-content">
+            <div class="fondo">
                 <!-- Modal Header with Title -->
-                <div class="pokemon-title row">
-                    <h1 class="mx-5 mt-4 ms-5 border-black col-9">
-                        <span class="text-bg-success rounded-3 p-3" id="pokemon-name">Bulbasaur</span>
-                    </h1>
-                    <button type="button" class="btn col w-25" data-bs-dismiss="modal">
-                        <span class="text-danger text-bg-light p-2 rounded-3">X</span>
-                    </button>
-                </div>
+                <div class="pokemon-title row position-relative">
+                  <h1 class="mx-auto mt-4 col-9 text-center">
+                      <span class="text-warning fondo rounded-3 p-3" id="personaje-name">Bulbasaur</span>
+                  </h1>
+                  <button type="button" class="btn btn-close bg-warning position-absolute top-0 end-0 me-3 mt-3" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
     
                 <!-- Modal Body -->
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-6 rounded-4">
-                            <div class="pokemon-image">
-                                <img src="" alt="Pokemon Image" id="pokemon-image" class="img-fluid bg-success border-black rounded-3">
-                            </div>
-                        </div>
-    
-                        <div class="col-md-6">
-                            <div class="abilities bg-success rounded-3 p-2">
-                                <p class="ms-4">
-                                    <strong>Habilidad:</strong> <span id="habilidad-pokemon"></span>
-                                </p>
-                                <p class="ms-4">
-                                    <strong>Habilidad oculta:</strong> <span id="pokemon-habilidad-oculta"></span>
-                                </p>
-                            </div>
-                            <div class="info-section bg-success rounded-3 mt-5 p-2">
-                                <p id="descripcion-pokemon">
-                                </p>
-                            </div>
-                            <div class="stats row text-center h-25 mt-5">
-                                <div class="col-3 mx-auto bg-success rounded-3">
-                                    <h1 class="fs-5">
-                                        <strong>Sexo</strong><br><span class="fs-5" id="genero-pokemon">♂ ♀</span>
-                                    </h1>
-                                </div>
-                                <div class="col-3 mx-auto bg-success rounded-3">
-                                    <strong>Altura</strong><br>
-                                    <span id="altura-pokemon"></span>
-                                </div>
-                                <div class="col-3 mx-auto bg-success rounded-3">
-                                    <strong>Peso</strong><br>
-                                    <span id="peso-pokemon"></span>
-                                </div>
-                            </div>
-                        </div>
+                      <div class="col-md-6 mx-auto">
+                        <div class="stats text-center mx-auto h-50 mt-5">
+                          <div class=" mx-auto fondo text-warning rounded-3 d-flex flex-column justify-content-center mb-3 mx-2">
+                              <h1 class="fs-5">
+                                  <strong>Género</strong><br><span class="fs-5" id="genero-personaje">Male</span>
+                              </h1>
+                          </div>
+                          <div class="mx-auto fondo text-warning rounded-3 d-flex flex-column justify-content-center mb-3 mx-2">
+                              <strong>Altura</strong><br>
+                              <span id="altura-personaje"></span>
+                          </div>
+                          <div class="mx-auto fondo text-warning rounded-3 d-flex flex-column justify-content-center mb-3 mx-2">
+                              <strong>Peso</strong><br>
+                              <span id="peso-personaje"></span>
+                          </div>
+                      </div>
                     </div>
-                    <div class="d-flex mt-3">
-                      <img src="" alt="" id="tipo-pokemon-1">
-                      <img src="" alt="" id="tipo-pokemon-2">
-                    </div>
+                  </div>
+                    
                 </div>
             </div>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="../StarWars/js/index3.js"></script>
+    <script src="./js/index3.js"></script>
   </body>
 </html>

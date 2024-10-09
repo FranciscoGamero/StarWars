@@ -30,44 +30,19 @@ $(document).ready(function () {
             });
         });
     }
-    /*
-    $(document).on('click', '.btn-ver-pokemon', function () {
-      var pokemonId = $(this).data('id');
+    $(document).on('click', '.btn-ver-personaje', function () {
+      var personajeId = $(this).data('id');
       $.ajax({
-          url: `https://pokeapi.co/api/v2/pokemon/${pokemonId}`,
+          url: `https://swapi.dev/api/people/${personajeId}`,
           method: "GET",
           success: function (data) {
-            $.ajax({
-                url: `https://pokeapi.co/api/v2/pokemon-species/${pokemonId}`,
-                method: "GET",
-                success: function (data) {
-                    var descripcionEs = data.flavor_text_entries.find(entry => entry.language.name === 'es');
-                    $('#descripcion-pokemon').text(descripcionEs ? descripcionEs.flavor_text : 'Descripción no disponible');
-                }
-            });
            // var habilidades = data.abilities;
-            var habilidadesVisibles = data.abilities
-            .filter(ability => !ability.is_hidden)
-            .map(ability => capitalize(ability.ability.name))
-            var habilidadesOcultas = data.abilities
-            .filter(ability => ability.is_hidden) 
-            .map(ability => capitalize(ability.ability.name))
-              $('#pokemon-name').text(data.name.toUpperCase());
-              $('#pokemon-image').attr('src',data.sprites.other['official-artwork'].front_default);
-               $('#habilidad-pokemon').text(habilidadesVisibles.join(', '));
-              $('#pokemon-habilidad-oculta').text(habilidadesOcultas.join(`, `));
-              $('#altura-pokemon').text(`${data.height / 10} m`);
-              $('#peso-pokemon').text(`${data.weight / 10} kg`);
-              $('#tipo-pokemon-1').attr('src', data.types[0] ? data.types[0].type?.['generation-viii']?.['sword-shield'].name_icon() : '')
-              if(data.types[1]){
-                $('#tipo-pokemon-2').attr('src', data.types[1] ? data.types[1].type.sprites?.['generation-viii']?.['sword-shield'].name_icon() : '')
-                $('#tipo-pokemon-2').show(); 
-              } else{
-                $('#tipo-pokemon-2').hide();
-              }; 
-              $('#pokemonModal').modal('show');
+              $('#personaje-name').text(data.name.toUpperCase());
+              $('#altura-personaje').text(`${data.height / 100} m`);
+              $('#peso-personaje').text(`${data.mass / 1} kg`);
+              $('#genero-personaje').text(data.gender.toUpperCase());
+              $('#personajeModal').modal('show');
           }
         })
   });
-  */
 });
